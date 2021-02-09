@@ -18,6 +18,18 @@ public class EvilHangman {
         } catch (EmptyDictionaryException | IOException e) {
             System.out.println("Empty Dictionary");
         }
+
+        while (guesses > 0) {
+            try {
+                System.out.print("Please guess: ");
+                Scanner input = new Scanner(System.in);
+                char in = input.next().charAt(0);
+                Set<String> strings = game.makeGuess(in);
+                //if (strings == 1) then tell them they win
+            } catch (GuessAlreadyMadeException e) {
+                System.out.println("Already guessed");
+            }
+        }
     }
 
 }
